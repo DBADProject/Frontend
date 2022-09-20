@@ -1,0 +1,24 @@
+@use "src/styles";
+
+body{
+
+  $padding: 4px;
+  $border: 15px;
+
+  padding:$padding;
+  border-color: map-get(styles.$dbad-primary,700);
+  border-style: solid;
+  border-width: $border;
+  height: calc(100% - (2* #{$border} + 2* #{$padding} ));
+}
+
+.tab{
+  align-content: end;
+  height: 64px;
+  font-size: 16pt;
+}
+
+.outlet{
+  padding-top: 64px;
+  padding-left: 96px;
+}

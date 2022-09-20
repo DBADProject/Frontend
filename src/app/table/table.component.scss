@@ -1,0 +1,16 @@
+@use "src/styles";
+
+.sourceTop{
+  font-size: 20pt;
+  font-weight: bold;
+  color: map-get(styles.$dbad-accent,800);
+}
+
+.selectTop{
+  font-size: 20pt;
+  margin: 12pt;
+}
+
+table{
+  width: 75%;
+}

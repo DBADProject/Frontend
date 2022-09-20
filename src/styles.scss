@@ -1,1 +1,91 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+
+$dbad-palette:(
+  50: #FEF7E1,
+  100:#FDEAB2,
+  200:#FCDC81,
+  300:#FAD04E,
+  400:#FAC428,
+  500:#F8BB0a,
+  600:#F8AD04,
+  700:#F89A04,  //og
+  800:#F88A04,
+  900:#F76A04,
+  contrast:(
+    50: rgba(black,0.87),
+    100:rgba(black,0.87),
+    200:rgba(black,0.87),
+    300:rgba(black,0.87),
+    400:rgba(black,0.87),
+    500:rgba(black,0.87),
+    600:rgba(black,0.87),
+    700:rgba(black,0.87),
+    800:rgba(black,0.87),
+    900:rgba(black,0.87)
+  )
+
+);
+
+$dbad-secondary:(
+  50: #F9EAE7,
+  100:#FACEBB,
+  200:#F7AE8F,
+  300:#F49063,
+  400:#F2793F,
+  500:#F0651B,
+  600:#E55F17,
+  700:#D85813,
+  800:#CA5010, //og
+  900:#B1450A,
+  contrast:(
+    50: rgba(black,0.87),
+    100:rgba(black,0.87),
+    200:rgba(black,0.87),
+    300:rgba(black,0.87),
+    400:rgba(black,0.87),
+    500:rgba(black,0.87),
+    600:rgba(black,0.87),
+    700:rgba(black,0.87),
+    800:rgba(black,0.87),
+    900:rgba(black,0.87)
+  )
+);
+
+$dbad-primary: mat-palette($dbad-palette);
+$dbad-accent: mat-palette($dbad-secondary);
+
+// The warn palette is optional (defaults to red).
+$dbad-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$dbad-theme: mat-light-theme((
+  color: (
+    primary: $dbad-primary,
+    accent: $dbad-accent,
+    warn: $dbad-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($dbad-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

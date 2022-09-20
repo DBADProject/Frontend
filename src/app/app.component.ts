@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import {ThemePalette} from '@angular/material/core';
+import {RouterLink} from '@angular/router';
+import {DashboardComponent} from './dashboard/dashboard.component';
+
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +11,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'dbad';
+  title = 'DBAD';
+  color: ThemePalette = 'accent';
+  currLink = '/dashboard';
 }

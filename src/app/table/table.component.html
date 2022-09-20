@@ -1,0 +1,22 @@
+<h3 class="sourceTop">Source: </h3>
+<mat-form-field appearance="fill">
+  <mat-label>Source</mat-label>
+  <mat-select (valueChange)="fillData($event)">
+    <mat-option *ngFor="let source of sources" [value]="source.id">
+      {{source.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> name </th>
+    <td mat-cell *matCellDef = "let dummydata">{{dummydata.name}}</td>
+  </ng-container>
+  <ng-container matColumnDef="value">
+    <th mat-header-cell *matHeaderCellDef> value </th>
+    <td mat-cell *matCellDef = "let dummydata">{{dummydata.value}}</td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+</table>
