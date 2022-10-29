@@ -1,0 +1,23 @@
+@use "src/styles";
+
+plotly-plot{
+  width: 1024pt;
+}
+
+#grid{
+
+  display: grid;
+  grid-template-columns: 128pt 512pt;
+
+}
+
+mat-slider{
+  width: 512pt;
+  margin-left: 64pt;
+  grid-column: 2;
+}
+
+mat-label{
+  grid-column: 1;
+}
+

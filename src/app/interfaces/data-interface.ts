@@ -9,3 +9,8 @@ export interface Datasource{
   data: Set<DummyData>;
   id: string;
 }
+
+export interface TimeTraffic{
+  time: number;
+  trafficValue: number;
+}

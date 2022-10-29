@@ -13,12 +13,21 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatOptionModule} from '@angular/material/core';
 import {MatTableModule} from '@angular/material/table';
+import { ChartComponent } from './chart/chart.component';
+import * as PlotlyJS from 'plotly.js-dist-min';
+import { PlotlyModule } from 'angular-plotly.js';
+import {MatSliderModule} from '@angular/material/slider';
+import { MapComponent } from './map/map.component';
+
+PlotlyModule.plotlyjs = PlotlyJS;
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    TableComponent
+    TableComponent,
+    ChartComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +40,9 @@ import {MatTableModule} from '@angular/material/table';
     MatFormFieldModule,
     MatSelectModule,
     MatOptionModule,
-    MatTableModule
+    MatTableModule,
+    PlotlyModule,
+    MatSliderModule
   ],
   bootstrap: [AppComponent]
 })

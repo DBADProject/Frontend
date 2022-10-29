@@ -13,5 +13,5 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 export class AppComponent {
   title = 'DBAD';
   color: ThemePalette = 'accent';
-  currLink = '/dashboard';
+  currLink = document.location.pathname;
 }

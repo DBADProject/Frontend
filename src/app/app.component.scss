@@ -1,24 +1,26 @@
 @use "src/styles";
 
-body{
+$padding: 4px;
+$border: 15px;
 
-  $padding: 4px;
-  $border: 15px;
+body {
 
-  padding:$padding;
-  border-color: map-get(styles.$dbad-primary,700);
+  padding: $padding;
+  border-color: map-get(styles.$dbad-primary, 700);
   border-style: solid;
   border-width: $border;
-  height: calc(100% - (2* #{$border} + 2* #{$padding} ));
+  height: calc(100% - (2 * #{$border} + 2 * #{$padding}));
 }
 
-.tab{
+.tab {
   align-content: end;
   height: 64px;
   font-size: 16pt;
 }
 
-.outlet{
+/*.outlet {
   padding-top: 64px;
   padding-left: 96px;
 }
+
+ */

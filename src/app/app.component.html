@@ -3,6 +3,8 @@
       <img src="assets/logo.png" height="64">
       <a mat-tab-link (click)="currLink='/dashboard'" [active]="currLink=='/dashboard'" routerLink="/dashboard" class="tab">Dashboard</a>
       <a mat-tab-link (click)="currLink='/table'" [active]="currLink=='/table'" routerLink="/table" class="tab">Table</a>
+      <a mat-tab-link (click)="currLink='/chart'" [active]="currLink=='/chart'" routerLink="/chart" class="tab">Chart</a>
+      <a mat-tab-link (click)="currLink='/map'" [active]="currLink=='/map'" routerLink="/map" class="tab">Map</a>
     </nav>
   <div class="outlet">
     <router-outlet></router-outlet>

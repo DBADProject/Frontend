@@ -23,7 +23,6 @@ export class TableComponent implements OnInit {
 
   ngOnInit(): void {
     this.clientService.getSources().subscribe((data: Set<Datasource>) => {
-      console.log(data);
       this.sources = data;
     });
   }
@@ -31,9 +30,9 @@ export class TableComponent implements OnInit {
   fillData(id): void{
     this.clientService.getDataById(id).subscribe((data: Set<DummyData>) => {
       console.log(data);
+      console.log(data instanceof Set);
       this.currData = data;
       this.dataSource = Array.from(this.currData);
-      console.log(this.dataSource);
     });
   }
 }

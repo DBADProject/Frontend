@@ -1,0 +1,42 @@
+<!--<mat-form-field appearance="fill">
+  <mat-label>Source</mat-label>
+  <mat-select (valueChange)="fillData($event)">
+    <mat-option *ngFor="let source of sources" [value]="source.id">
+      {{source.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>-->
+
+<div id = "grid">
+<mat-label>Wind</mat-label>
+<mat-slider
+  thumbLabel
+  tickInterval="1"
+  min="0"
+  max="45"
+  value="10"
+  id="wind"
+  (input)="sliderChange()"></mat-slider>
+<br/>
+<mat-label>Temperatur</mat-label>
+<mat-slider
+  thumbLabel
+  tickInterval="1"
+  min="-20"
+  max="45"
+  value="25"
+  id="temperature"
+  (valueChange)="sliderChange()"></mat-slider>
+<br/>
+<mat-label>Niederschlag</mat-label>
+<mat-slider
+  thumbLabel
+  tickInterval="1"
+  min="0"
+  max="100"
+  value="0"
+  id="rainfall"
+  (valueChange)="sliderChange()"></mat-slider>
+</div>
+<plotly-plot [data]="graph.data" [layout]="graph.layout"></plotly-plot>
+

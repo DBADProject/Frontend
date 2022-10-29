@@ -1,0 +1,10 @@
+@use "src/app/app.component";
+
+#dbadMap{
+  /*height: 550pt;
+  width: 1300pt;
+
+   */
+  height: calc(100vh - (2 * #{app.$border} + 2 * #{app.$padding}) - 100pt);
+  width: calc(100vw - (3 * #{app.$border} + 4 * #{app.$padding}));
+}
