@@ -27,9 +27,9 @@
     "azure-maps-drawing-tools": "^1.0.0",
     "azure-maps-rest": "^2.1.0",
     "chart.js": "^3.9.1",
-    "plotly.js-dist-min": "^2.14.0",
+    "plotly.js-dist-min": "^2.16.1",
     "rxjs": "~6.6.0",
-    "tslib": "^2.0.0",
+    "tslib": "^2.4.1",
     "zone.js": "~0.11.3"
   },
   "devDependencies": {
