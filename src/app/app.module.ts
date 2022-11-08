@@ -18,6 +18,8 @@ import * as PlotlyJS from 'plotly.js-dist-min';
 import { PlotlyModule } from 'angular-plotly.js';
 import {MatSliderModule} from '@angular/material/slider';
 import { MapComponent } from './map/map.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -42,7 +44,9 @@ PlotlyModule.plotlyjs = PlotlyJS;
     MatOptionModule,
     MatTableModule,
     PlotlyModule,
-    MatSliderModule
+    MatSliderModule,
+    MatExpansionModule,
+    MatDatepickerModule
   ],
   bootstrap: [AppComponent]
 })

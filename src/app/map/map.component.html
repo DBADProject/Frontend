@@ -1,1 +1,55 @@
-<div id="dbadMap"></div>
+<div id="container">
+  <div id="input">
+
+
+
+    <div id="weatherInput">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Weather
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div id="weatherGrid">
+      <mat-label>Wind</mat-label>
+        <mat-slider
+          thumbLabel
+          tickInterval="1"
+          min="0"
+          max="30"
+          value="10"
+          id="wind"
+          (input)="sliderChange()"></mat-slider>
+        <mat-label>Temperature</mat-label>
+        <mat-slider
+          thumbLabel
+          tickInterval="1"
+          min="-20"
+          max="40"
+          value="25"
+          id="temperature"
+          (valueChange)="sliderChange()"></mat-slider>
+        <mat-label>Pressure</mat-label>
+        <mat-slider
+          thumbLabel
+          tickInterval="1"
+          min="900"
+          max="1100"
+          value="1000"
+          id="pressure"
+          (valueChange)="sliderChange()"></mat-slider>
+        <mat-label>Humidity</mat-label>
+        <mat-slider
+          thumbLabel
+          tickInterval="1"
+          min="0"
+          max="100"
+          value="10"
+          id="humidity"
+          (valueChange)="sliderChange()"></mat-slider>
+      </div>
+    </mat-expansion-panel>
+  </div>
+  </div>
+  <div id="dbadMap"></div>
+</div>

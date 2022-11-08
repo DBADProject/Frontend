@@ -22,7 +22,7 @@ export class MapComponent implements OnInit {
       showLogo: false,
       style: 'road',
       zoom: 11,
-      autoResize: false,
+      autoResize: true,
       enableAccessibility: false,
       showFeedbackLink: false,
       center: new atlas.data.Position( -72.987576, 40.752312),
@@ -64,6 +64,16 @@ export class MapComponent implements OnInit {
       }), 'labels');
     });
 
+
+  }
+  sliderChange(): void {
+
+    const wind = document.querySelector('#wind').getAttribute('value');
+    const temperature = document.querySelector('#temperature').getAttribute('value');
+    const humidity = document.querySelector('#humidity').getAttribute('value');
+    const pressure = document.querySelector('#pressure').getAttribute('value');
+
+    // this.fillData(wind, temperature, rainfall);
 
   }
 

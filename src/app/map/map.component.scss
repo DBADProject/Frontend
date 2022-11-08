@@ -1,10 +1,42 @@
 @use "src/app/app.component";
 
 #dbadMap{
-  /*height: 550pt;
+
+  /*
+  height: 550pt;
   width: 1300pt;
 
    */
   height: calc(100vh - (2 * #{app.$border} + 2 * #{app.$padding}) - 100pt);
-  width: calc(100vw - (3 * #{app.$border} + 4 * #{app.$padding}));
+  width: calc(78vw - (3 * #{app.$border} + 4 * #{app.$padding}));
+}
+
+#input{
+  width: 100%;
+}
+
+#container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% calc(70vw - (3 * #{app.$border} + 4 * #{app.$padding}));;
+  gap: 10px;
+  padding-top: 16pt;
+  padding-left: 16pt;
+}
+
+#weatherGrid{
+  display: grid;
+  grid-template-columns: 33% 66%;
+}
+
+mat-label{
+  grid-column: 1;
+  padding-top: 12%;
+  padding-bottom: 12%;
+  width: 100%;
+  font-size: 1.3em;
+}
+
+mat-slider{
+  width: auto;
 }
