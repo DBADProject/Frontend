@@ -12,16 +12,16 @@
   "private": true,
   "dependencies": {
     "@angular-material-components/datetime-picker": "^8.0.0",
-    "@angular/animations": "~12.2.16",
-    "@angular/cdk": "^12.2.13",
-    "@angular/common": "~12.2.16",
-    "@angular/compiler": "~12.2.16",
-    "@angular/core": "~12.2.16",
-    "@angular/forms": "~12.2.16",
-    "@angular/material": "^12.2.13",
-    "@angular/platform-browser": "~12.2.16",
-    "@angular/platform-browser-dynamic": "~12.2.16",
-    "@angular/router": "~12.2.16",
+    "@angular/animations": "~14.2.9",
+    "@angular/cdk": "^13.3.9",
+    "@angular/common": "~14.2.9",
+    "@angular/compiler": "~14.2.9",
+    "@angular/core": "~13.3.11",
+    "@angular/forms": "~14.2.9",
+    "@angular/material": "^13.3.9",
+    "@angular/platform-browser": "~14.2.9",
+    "@angular/platform-browser-dynamic": "~14.2.9",
+    "@angular/router": "~14.2.9",
     "angular-plotly.js": "^4.0.4",
     "azure-maps-control": "^2.2.0",
     "azure-maps-drawing-tools": "^1.0.0",
@@ -33,9 +33,9 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~12.2.18",
-    "@angular/cli": "~12.2.18",
-    "@angular/compiler-cli": "~12.2.16",
+    "@angular-devkit/build-angular": "~13.3.9",
+    "@angular/cli": "~13.3.9",
+    "@angular/compiler-cli": "~14.2.9",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "@types/plotly.js-dist-min": "^2.3.1",
@@ -50,6 +50,6 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~4.3.5"
+    "typescript": "~4.6.4"
   }
 }
