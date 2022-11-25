@@ -20,6 +20,9 @@ import {MatSliderModule} from '@angular/material/slider';
 import { MapComponent } from './map/map.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {NgxMatDatetimePickerModule, NgxMatNativeDateModule, NgxMatTimepickerModule} from '@angular-material-components/datetime-picker';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -46,7 +49,12 @@ PlotlyModule.plotlyjs = PlotlyJS;
     PlotlyModule,
     MatSliderModule,
     MatExpansionModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    NgxMatDatetimePickerModule,
+    NgxMatNativeDateModule,
+    NgxMatTimepickerModule,
+    MatInputModule,
+    MatButtonModule
   ],
   bootstrap: [AppComponent]
 })

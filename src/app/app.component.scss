@@ -2,8 +2,9 @@
 
 $padding: 4px;
 $border: 15px;
+$icon-size: 64px;
 
-body {
+#wrapper {
 
   padding: $padding;
   border-color: map-get(styles.$dbad-primary, 700);
@@ -16,6 +17,13 @@ body {
   align-content: end;
   height: 64px;
   font-size: 16pt;
+}
+
+#grid {
+
+
+  display: grid;
+  grid-template-columns: $icon-size calc(100% - #{$icon-size});
 }
 
 /*.outlet {

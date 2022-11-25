@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Datasource, DummyData} from '../interfaces/data-interface';
 import {HttpClientService} from '../http-client.service';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, UntypedFormGroup} from '@angular/forms';
 import {DataSource} from '@angular/cdk/collections';
 import {MatTableDataSource} from '@angular/material/table';
 
@@ -13,7 +13,7 @@ import {MatTableDataSource} from '@angular/material/table';
 export class TableComponent implements OnInit {
 
   sources: Set<Datasource>;
-  sourceForm: FormGroup;
+  sourceForm: UntypedFormGroup;
   sourceInput: Datasource = null;
   currData: Set<DummyData> = new Set<DummyData>();
   dataSource;

@@ -7,12 +7,12 @@
   width: 1300pt;
 
    */
-  height: calc(100vh - (2 * #{app.$border} + 2 * #{app.$padding}) - 100pt);
+  height: calc(100vh - (2 * #{app.$border} + 2 * #{app.$padding} + 7rem) );
   width: calc(78vw - (3 * #{app.$border} + 4 * #{app.$padding}));
 }
 
 #input{
-  width: 100%;
+  width: calc(100% - (2 *(#{app.$border}) + 2 * #{app.$padding}));
 }
 
 #container{
@@ -21,7 +21,7 @@
   grid-template-columns: 20% calc(70vw - (3 * #{app.$border} + 4 * #{app.$padding}));;
   gap: 10px;
   padding-top: 16pt;
-  padding-left: 16pt;
+  padding-left: 8pt;
 }
 
 #weatherGrid{
@@ -34,9 +34,17 @@ mat-label{
   padding-top: 12%;
   padding-bottom: 12%;
   width: 100%;
-  font-size: 1.3em;
+  font-size: 1em;
 }
 
 mat-slider{
   width: auto;
+}
+
+mat-expansion-panel{
+  margin: 1em;
+}
+
+#submit{
+  margin: 1em;
 }

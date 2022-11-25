@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {ThemePalette} from '@angular/material/core';
 import {RouterLink} from '@angular/router';
 import {DashboardComponent} from './dashboard/dashboard.component';
-
 
 
 @Component({

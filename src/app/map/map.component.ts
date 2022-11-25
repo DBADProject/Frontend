@@ -1,14 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import * as atlas from 'azure-maps-control';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {TrafficDTO, TrafficInputDTO} from '../interfaces/data-interface';
+import {HttpClientService} from '../http-client.service';
+
 
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
+
 export class MapComponent implements OnInit {
 
-  constructor() { }
+  public date;
+  public dto: TrafficInputDTO = {
+    wind : 10,
+    temperature : 25,
+    pressure: 1000,
+    humidity: 10,
+    time: '2022-01-01T00:00:00.000Z',
+    bikeAmount: 0,
+    bikeShareDuration: 0
+  } as TrafficInputDTO;
+  public traffic: Set<TrafficDTO>;
+  public datasource = new atlas.source.DataSource();
+  public defaultColor = '#FFEDA0';
+  constructor(private clientService: HttpClientService) { }
 
   ngOnInit(): void {
     this.createMap();
@@ -25,6 +43,7 @@ export class MapComponent implements OnInit {
       autoResize: true,
       enableAccessibility: false,
       showFeedbackLink: false,
+      pitch: 45,
       center: new atlas.data.Position( -72.987576, 40.752312),
       authOptions: {
         authType: atlas.AuthenticationType.subscriptionKey,
@@ -34,7 +53,7 @@ export class MapComponent implements OnInit {
 
 
 
-    /*map.controls.add([
+    map.controls.add([
       new atlas.control.ZoomControl(),
       new atlas.control.CompassControl(),
       new atlas.control.PitchControl(),
@@ -43,38 +62,51 @@ export class MapComponent implements OnInit {
       position: atlas.ControlPosition.TopRight
     });
 
-     */
-
     map.events.add('ready', () => {
 
-      const dataSource = new atlas.source.DataSource();
-      map.sources.add(dataSource);
-      const layer = new atlas.layer.SymbolLayer(dataSource);
-      map.layers.add(layer);
-      dataSource.add(new atlas.data.Point([6.7735, 51.2277]));
+      const trafficAmount = [
+        'step',
+        ['get', 'traffic'],
+        [
+          0, '#e3fe4c',
+          50, '#fded3c',
+          150, '#fc932a',
+          200, '#E31A1C',
+          250, '#BD0026',
+          300, '#800026'
+        ]
+      ];
 
-      const datasource = new atlas.source.DataSource();
-      map.sources.add(datasource);
+      map.sources.add(this.datasource);
 
-      datasource.importDataFromUrl('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson');
+      this.datasource.setOptions(this.traffic);
 
-      map.layers.add(new atlas.layer.HeatMapLayer(datasource, null, {
-        radius: 10,
-        opacity: 0.8
-      }), 'labels');
+
+      map.layers.add(new atlas.layer.PolygonLayer(this.datasource));
     });
+  }
+  submit(): void {
+    this.dto.time = this.date.toISOString();
+    console.log(this.dto);
+    this.clientService.getTrafficAmount(this.dto).subscribe((data: Set<TrafficDTO>) => {
+      data.forEach(dtoData => {
+        const polygon = new atlas.data.Feature(new atlas.data.Polygon(([
+          [dtoData.coordinates[0], dtoData.coordinates[1]],
+          [dtoData.coordinates[0] + 0.5, dtoData.coordinates[1]],
+          [dtoData.coordinates[0], dtoData.coordinates[1] + 0.5],
+          [dtoData.coordinates[0] + 0.5, dtoData.coordinates[1] + 0.5]
+        ])), {Traffic: dtoData.trafficAmount});
 
+        this.datasource.add(polygon);
+      });
+      console.log(this.datasource);
+
+    });
+  }
+
+  isDisabled(): boolean{
+
+     return this.date == null;
 
   }
-  sliderChange(): void {
-
-    const wind = document.querySelector('#wind').getAttribute('value');
-    const temperature = document.querySelector('#temperature').getAttribute('value');
-    const humidity = document.querySelector('#humidity').getAttribute('value');
-    const pressure = document.querySelector('#pressure').getAttribute('value');
-
-    // this.fillData(wind, temperature, rainfall);
-
-  }
-
 }

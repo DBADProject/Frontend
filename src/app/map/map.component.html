@@ -1,55 +1,92 @@
 <div id="container">
   <div id="input">
 
-
+    <div id="dateInput">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Date
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-form-field>
+          <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose a date" [(ngModel)]="date">
+          <mat-datepicker-toggle matSuffix [for]="picker" id="date"></mat-datepicker-toggle>
+          <ngx-mat-datetime-picker #picker [enableMeridian]="false"
+                                   [disableMinute]="true" [stepMinute]="60" [defaultTime]="[12,0,0]">
+          </ngx-mat-datetime-picker>
+        </mat-form-field>
+      </mat-expansion-panel>
+    </div>
 
     <div id="weatherInput">
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Weather
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <div id="weatherGrid">
-      <mat-label>Wind</mat-label>
-        <mat-slider
-          thumbLabel
-          tickInterval="1"
-          min="0"
-          max="30"
-          value="10"
-          id="wind"
-          (input)="sliderChange()"></mat-slider>
-        <mat-label>Temperature</mat-label>
-        <mat-slider
-          thumbLabel
-          tickInterval="1"
-          min="-20"
-          max="40"
-          value="25"
-          id="temperature"
-          (valueChange)="sliderChange()"></mat-slider>
-        <mat-label>Pressure</mat-label>
-        <mat-slider
-          thumbLabel
-          tickInterval="1"
-          min="900"
-          max="1100"
-          value="1000"
-          id="pressure"
-          (valueChange)="sliderChange()"></mat-slider>
-        <mat-label>Humidity</mat-label>
-        <mat-slider
-          thumbLabel
-          tickInterval="1"
-          min="0"
-          max="100"
-          value="10"
-          id="humidity"
-          (valueChange)="sliderChange()"></mat-slider>
-      </div>
-    </mat-expansion-panel>
-  </div>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Weather
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div id="weatherGrid">
+          <mat-label>Wind</mat-label>
+          <mat-slider
+            thumbLabel
+            tickInterval="1"
+            min="0"
+            max="30"
+            value="10"
+            id="wind"
+            [(ngModel)]="dto.wind"></mat-slider>
+          <mat-label>Temperature</mat-label>
+          <mat-slider
+            thumbLabel
+            tickInterval="1"
+            min="-20"
+            max="40"
+            value="25"
+            id="temperature"
+            [(ngModel)]="dto.temperature"></mat-slider>
+          <mat-label>Pressure</mat-label>
+          <mat-slider
+            thumbLabel
+            tickInterval="1"
+            min="900"
+            max="1100"
+            value="1000"
+            id="pressure"
+            [(ngModel)]="dto.pressure"></mat-slider>
+          <mat-label>Humidity</mat-label>
+          <mat-slider
+            thumbLabel
+            tickInterval="1"
+            min="0"
+            max="100"
+            value="10"
+            id="humidity"
+            [(ngModel)]="dto.humidity" [required]></mat-slider>
+        </div>
+      </mat-expansion-panel>
+    </div>
+    <div id="bikeShareInpute">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            BikeSharing
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form class="example-form">
+          <mat-form-field appearance="fill">
+            <mat-label>Bikeshare duration</mat-label>
+            <input matInput type="number" name="bikeShareDuration" step="0.5" placeholder="0" value="0" min="0" [(ngModel)]="dto.bikeShareDuration" [required]>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Bikes shared per Hour</mat-label>
+            <input matInput type="number" step="0.5" name="bikeShareAmount" placeholder="0" value="0" min="0" [(ngModel)]="dto.bikeAmount" [required]/>
+            <mat-hint>In minutes</mat-hint>
+          </mat-form-field>
+        </form>
+      </mat-expansion-panel>
+
+    </div>
+    <button mat-raised-button color="primary" id="submit" (click)="submit()" [disabled] = "isDisabled()" >Calc Traffic</button>
   </div>
   <div id="dbadMap"></div>
 </div>
