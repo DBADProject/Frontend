@@ -85,8 +85,18 @@
         </form>
       </mat-expansion-panel>
 
+
     </div>
-    <button mat-raised-button color="primary" id="submit" (click)="submit()" [disabled] = "isDisabled()" >Calc Traffic</button>
+    <button mat-raised-button color="primary" id="submit" (click)="submit()" [disabled] = "date==null" >Calc Traffic</button>
   </div>
   <div id="dbadMap"></div>
+  <div class="legend">
+    Traffic
+    <canvas id="legendCanvas"></canvas>
+    <span class="legend-min">-30%</span>
+    <span class="legend-mid">0%</span>
+    <span class="legend-max">30%</span>
+    <br />
+    <button mat-raised-button id="playPauseBtn"  (click)="togglePlayPause()" >Play/Pause</button><span class="legend-label">0:00</span>
+  </div>
 </div>

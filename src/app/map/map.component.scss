@@ -15,6 +15,7 @@
   width: calc(100% - (2 *(#{app.$border}) + 2 * #{app.$padding}));
 }
 
+
 #container{
   width: 100%;
   display: grid;
@@ -47,4 +48,51 @@ mat-expansion-panel{
 
 #submit{
   margin: 1em;
+}
+
+.legend {
+  position: relative;
+  bottom: 120%;
+  left: 110%;
+  width: 256px;
+  height: 80px;
+  font-size: 12px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  padding: 32px;
+}
+
+#legendCanvas {
+  width: 256px;
+  height: 15px;
+  margin-top:5px;
+}
+
+.legend-mid {
+  margin: 0 0 0 85px;
+}
+
+.legend-max {
+  float: right;
+}
+
+.legend-label {
+  margin-left: 40px;
+}
+
+#colorContainer {
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7;
+  background-color: #CA5010;
+}
+
+#popup{
+  padding: 4pt;
+}
+
+#playPauseBtn{
+  align-self: center;
 }

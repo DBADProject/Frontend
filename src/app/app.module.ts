@@ -23,6 +23,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {NgxMatDatetimePickerModule, NgxMatNativeDateModule, NgxMatTimepickerModule} from '@angular-material-components/datetime-picker';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {MatNativeDateModule} from '@angular/material/core';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -54,7 +55,8 @@ PlotlyModule.plotlyjs = PlotlyJS;
     NgxMatNativeDateModule,
     NgxMatTimepickerModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatNativeDateModule
   ],
   bootstrap: [AppComponent]
 })

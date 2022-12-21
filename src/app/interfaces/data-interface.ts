@@ -26,6 +26,8 @@ export interface TrafficInputDTO{
 }
 export interface TrafficDTO{
   coordinates: number[];
-  trafficAmount: number;
-
+  trafficAmount: number[];
+  trafficSpeed: number[];
+  trafficTravelTime: number[];
+  testValue: number;
 }

@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'table', component: TableComponent },
   { path: 'chart', component: ChartComponent },
   { path: 'map', component: MapComponent},
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full'}
+  { path: '', redirectTo: '/map', pathMatch: 'full'}
 ];
 
 @NgModule({

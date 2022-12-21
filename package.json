@@ -9,6 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "types": "/index.d.ts",
   "private": true,
   "dependencies": {
     "@angular-material-components/datetime-picker": "^8.0.0",
@@ -28,6 +29,7 @@
     "azure-maps-drawing-tools": "^1.0.0",
     "azure-maps-rest": "^2.1.0",
     "chart.js": "^3.9.1",
+    "flubber": "^0.4.2",
     "moment": "^2.29.4",
     "plotly.js-dist-min": "^2.16.1",
     "rxjs": "~6.6.0",
@@ -53,5 +55,18 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.6.4"
-  }
+  },
+  "description": "<<<<<<< HEAD\r # Dbad",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DBADProject/Frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DBADProject/Frontend/issues"
+  },
+  "homepage": "https://github.com/DBADProject/Frontend#readme"
 }
