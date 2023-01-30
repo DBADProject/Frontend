@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError, retry} from 'rxjs/operators';
 import {Data} from '@angular/router';
-import {Datasource, DummyData, TimeTraffic, TrafficDTO, TrafficInputDTO} from './interfaces/data-interface';
+import {AccidentDTO, AccidentInputDTO, Datasource, DummyData, TimeTraffic, TrafficDTO, TrafficInputDTO} from './interfaces/data-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +28,8 @@ export class HttpClientService {
   }
   getTrafficAmount(input: TrafficInputDTO): Observable<Set<TrafficDTO>>{
     return this.http.post<Set<TrafficDTO>>('http://localhost:8083/traffic', input);
+  }
+  getAccidents(input: AccidentInputDTO): Observable<Set<AccidentDTO>>{
+    return this.http.post<Set<AccidentDTO>>('http://localhost:8083/accidents', input);
   }
 }

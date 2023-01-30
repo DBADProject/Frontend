@@ -1,13 +1,13 @@
 @use "src/app/app.component";
 
-#dbadMapTraffic{
+#dbadMapAccident{
 
   /*
   height: 550pt;
   width: 1300pt;
 
    */
-  height: calc(100vh - (2 * #{app.$border} + 2 * #{app.$padding} + 7rem));
+  height: calc(100vh - (2 * #{app.$border} + 2 * #{app.$padding} + 7rem) );
   width: calc(78vw - (3 * #{app.$border} + 4 * #{app.$padding}));
 }
 
@@ -30,8 +30,7 @@
   display: grid;
   grid-template-columns: 33% 66%;
 }
-
-#bikeGrid{
+#trafficGrid{
   display: grid;
   grid-template-columns: 33% 66%;
 }
@@ -50,7 +49,6 @@ mat-slider{
 
 mat-expansion-panel{
   margin: 1em;
-
 }
 
 #submit{

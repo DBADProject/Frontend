@@ -4,13 +4,12 @@ import {DashboardComponent} from '../dashboard/dashboard.component';
 import {TableComponent} from '../table/table.component';
 import {ChartComponent} from '../chart/chart.component';
 import {MapComponent} from '../map/map.component';
+import {AccidentMapComponent} from '../accident-map/accident-map.component';
 
 const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'table', component: TableComponent },
-  { path: 'chart', component: ChartComponent },
-  { path: 'map', component: MapComponent},
-  { path: '', redirectTo: '/map', pathMatch: 'full'}
+  { path: 'accidents', component: AccidentMapComponent },
+  { path: 'traffic', component: MapComponent},
+  { path: '', redirectTo: '/traffic', pathMatch: 'full'}
 ];
 
 @NgModule({

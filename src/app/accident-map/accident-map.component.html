@@ -1,23 +1,6 @@
 <div id="container">
   <div id="input">
 
-    <div id="dateInput">
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Date
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        <mat-form-field appearance="fill">
-          <mat-label>Choose a date</mat-label>
-          <input matInput [matDatepicker]="picker" [(ngModel)]="date">
-          <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
-          <mat-hint>MM/DD/YYYY</mat-hint>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-      </mat-expansion-panel>
-    </div>
-
     <div id="weatherInput">
       <mat-expansion-panel>
         <mat-expansion-panel-header>
@@ -69,51 +52,50 @@
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title>
-            BikeSharing
+            Traffic Data
           </mat-panel-title>
         </mat-expansion-panel-header>
-          <div id="bikeGrid">
-            <mat-label>Bikes</mat-label>
-            <mat-slider
-              thumbLabel
-              tickInterval="1"
-              min="1"
-              max="500"
-              value="100"
-              id="bikes"
-              [(ngModel)]="dto.bikeAmount"></mat-slider>
-            <mat-label>Bikes Shared</mat-label>
-            <mat-slider
-              thumbLabel
-              tickInterval="1"
-              min="1"
-              max="500"
-              value="100"
-              id="bikesShared"
-              [(ngModel)]="dto.bikesShared"></mat-slider>
-            <mat-label>Bike Share-duration</mat-label>
-            <mat-slider
-              thumbLabel
-              tickInterval="1"
-              min="1"
-              max="500"
-              value="100"
-              id="bikeShareDuration"
-              [(ngModel)]="dto.bikeShareDuration"></mat-slider>
-          </div>
+        <div id="trafficGrid">
+          <mat-label>Traffic Amount</mat-label>
+          <mat-slider
+            thumbLabel
+            tickInterval="1"
+            min="1"
+            max="500"
+            value="100"
+            id="trafficAmount"
+            [(ngModel)]="dto.trafficAmount"></mat-slider>
+          <mat-label>Traffic Speed</mat-label>
+          <mat-slider
+            thumbLabel
+            tickInterval="1"
+            min="1"
+            max="500"
+            value="100"
+            id="trafficSpeed"
+            [(ngModel)]="dto.trafficSpeed"></mat-slider>
+          <mat-label>Traffic Travel Time</mat-label>
+          <mat-slider
+            thumbLabel
+            tickInterval="1"
+            min="1"
+            max="500"
+            value="100"
+            id="trafficTravelTime"
+            [(ngModel)]="dto.trafficTravelTime"></mat-slider>
+        </div>
       </mat-expansion-panel>
 
-
     </div>
-    <button mat-raised-button color="primary" id="submit" (click)="submit()" [disabled] = "date==null" >Calc Traffic</button>
+    <button mat-raised-button color="primary" id="submit" (click)="submit()" >Calc Traffic</button>
   </div>
-  <div id="dbadMapTraffic"></div>
+  <div id="dbadMapAccident"></div>
   <div class="legend">
     Traffic
     <canvas id="legendCanvas"></canvas>
-    <span class="legend-min">0</span>
-    <span class="legend-mid">45</span>
-    <span class="legend-max">90</span>
+    <span class="legend-min">-30%</span>
+    <span class="legend-mid">0%</span>
+    <span class="legend-max">30%</span>
     <br />
     <button mat-raised-button id="playPauseBtn"  (click)="togglePlayPause()" >Play/Pause</button><span class="legend-label">0:00</span>
   </div>

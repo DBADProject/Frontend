@@ -23,11 +23,29 @@ export interface TrafficInputDTO{
   time: string;
   bikeAmount: number;
   bikeShareDuration: number;
+  bikesShared: number;
 }
 export interface TrafficDTO{
   coordinates: number[];
   trafficAmount: number[];
   trafficSpeed: number[];
   trafficTravelTime: number[];
-  testValue: number;
+}
+
+export interface AccidentInputDTO{
+  wind: number;
+  humidity: number;
+  temperature: number;
+  pressure: number;
+  trafficAmount: number;
+  trafficSpeed: number;
+  trafficTravelTime: number;
+}
+
+export interface AccidentDTO{
+  coordinates: number[];
+  cyclistsKilled: number[];
+  cyclistsInjured: number[];
+  peopleInjured: number[];
+  peopleKilled: number[];
 }

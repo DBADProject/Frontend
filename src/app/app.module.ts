@@ -24,6 +24,7 @@ import {NgxMatDatetimePickerModule, NgxMatNativeDateModule, NgxMatTimepickerModu
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatNativeDateModule} from '@angular/material/core';
+import { AccidentMapComponent } from './accident-map/accident-map.component';
 
 PlotlyModule.plotlyjs = PlotlyJS;
 
@@ -33,7 +34,8 @@ PlotlyModule.plotlyjs = PlotlyJS;
     DashboardComponent,
     TableComponent,
     ChartComponent,
-    MapComponent
+    MapComponent,
+    AccidentMapComponent
   ],
   imports: [
     BrowserModule,
